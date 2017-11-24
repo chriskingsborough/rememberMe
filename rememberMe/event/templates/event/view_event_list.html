@@ -1,0 +1,28 @@
+{% if events %}
+    <table border="1">
+        <tr>
+            <td>event name</td>
+            <td>next send</td>
+            <td>every</td>
+            <td>warning me</td>
+            <td>Edit</td>
+            <td>View</td>
+            <td>Delete</td>
+        </tr>
+    {% for row in events %}
+        <tr>
+            <td>{{ row.event_name }}</td>
+            <td>{{ row.next_send }}</td>
+            <td>{{ row.interval }} {{ row.interval_type }}</td>
+            <td>{{ row.warning_interval }} {{ row.warning_interval_type }} before</td>
+            <td><a href="/update_event/?id={{ row.id }}">{{row.id}}</a></td>
+            <td><a href="/view_event/?id={{ row.id }}">{{row.id}}</a></td>
+            <td><a href="/delete_event/?id={{ row.id }}">{{row.id}}</a></td>
+        </tr>
+    {% endfor %}
+    </table>
+{% else %}
+    <p>No events.</p>
+{% endif %}
+<a href="/">Home</a><br>
+<a href="/create_event/">Create Event</a>

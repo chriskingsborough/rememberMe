@@ -1,0 +1,7 @@
+<form method="post" action="">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Create new person" />
+</form>
+<a href='/'>Home</a><br>
+<a href='/view_person_list/'>View People</a>

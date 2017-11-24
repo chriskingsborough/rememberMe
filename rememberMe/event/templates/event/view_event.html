@@ -1,0 +1,10 @@
+<h3>{{ event.event_name }}</h3>
+<p>{{ event.message }}</p>
+<p>Next send: {{ event.next_send }}</p>
+
+<br>
+<a href=/view_event_list/>View events</a>
+<br>
+<a href="/update_event/?id={{ event.id }}">Edit event</a>
+<br>
+<a href="/delete_event/?id={{ event.id }}">Delete event</a>
