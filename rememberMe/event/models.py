@@ -7,7 +7,7 @@ class Event(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     event_name = models.CharField(max_length=500)
     recurring = models.BooleanField(default=True)
-    message = models.CharField(max_length=500)
+    message = models.TextField()
     created = models.DateTimeField()
     start_date = models.DateTimeField()
     end_date = models.DateTimeField(null=True, blank=True)
@@ -25,6 +25,7 @@ class Event(models.Model):
     warning_interval_type = models.CharField(max_length=50, default='day(s)')
     warning_next_send = models.DateTimeField(null=True)
     in_deleted = models.BooleanField(default=False)
+    notification_method = models.CharField(default='text', max_length=10)
     interval_type.choices = (
         ('day', 'day(s)'),
         ('week', 'week(s)'),
@@ -36,6 +37,11 @@ class Event(models.Model):
         ('week', 'week(s)'),
         ('month', 'month(s)'),
         ('year', 'year(s)')
+    )
+    notification_method.choices = (
+        ('text', 'text'),
+        ('email', 'email'),
+        ('both', 'both')
     )
 
 

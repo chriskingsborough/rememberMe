@@ -25,7 +25,7 @@ SECRET_KEY = '_$g2by)zlvx_14(lgi=l+f1f!kflfr8_62uku%iq(etrh^6l8o'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0']
+ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'index',
     'event',
     'person',
+    'sslserver',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -86,6 +87,14 @@ DATABASES = {
         'PORT': ''
     }
 }
+
+# HTTPS support
+SECURE_SSL_REDIRECT = False
+SESSION_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = False
+
+# TODO: consider this
+SESSION_EXPIRE_AT_BROWSER_CLOSE=False
 
 # User custom user model
 AUTH_USER_MODEL = 'index.User'

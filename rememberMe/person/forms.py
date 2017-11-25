@@ -15,12 +15,13 @@ class PersonForm(ModelForm):
             'start_date',
             'interval',
             'interval_type',
+            'notification_method'
         ]
 
         widgets = {
             'name': forms.TextInput(),
             'start_date': DateInput(),
-            'message': forms.TextInput(),
+            'message': forms.Textarea(),
             'interval': forms.NumberInput(),
         }
 

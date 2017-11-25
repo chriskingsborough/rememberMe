@@ -19,17 +19,18 @@ class EventForm(ModelForm):
             'interval_type',
             'warning',
             'warning_interval',
-            'warning_interval_type'
+            'warning_interval_type',
+            'notification_method'
         ]
 
         widgets = {
             'event_name': forms.TextInput(),
             'recurring': forms.CheckboxInput(),
-            'message': forms.TextInput(),
+            'message': forms.Textarea(),
             'start_date': DateInput(),
             'end_date': DateInput(),
             'interval': forms.NumberInput(),
             'warning': forms.CheckboxInput(),
-            'warning_interval': forms.NumberInput()
+            'warning_interval': forms.NumberInput(),
         }
 
