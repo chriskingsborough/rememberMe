@@ -18,6 +18,8 @@ from django.contrib import admin
 from person import views as person
 from event import views as event
 from index import views as index
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^$', index.index, name='index'),
@@ -35,4 +37,4 @@ urlpatterns = [
     url(r'^update_person/', person.edit_person),
     url(r'^view_person/', person.view_person),
     url(r'^delete_person/', person.delete_person)
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

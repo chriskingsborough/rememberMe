@@ -1,11 +1,34 @@
-<h1>Project Greenwich</h1>
-<br><br>
+{% load static %}
 
-<a href=/create_event/>Create a new event</a>
-<a href=/view_event_list/>View events</a>
-<br><br>
-<a href=/create_person/>Create a new person</a>
-<a href=/view_person_list/>View people</a>
+<head>
+    <link rel="stylesheet" href="{% static 'index/login.css' %}" type="text/css">
+</head>
 
-<br><br>
-<a href=/logout/>Logout</a>
+<body>
+<div class="login-page">
+
+  <div class="form">
+
+    <table class="register-form">
+        {% csrf_token %}
+      <tr>
+        <td><a href=/create_event/><button">Create a new event</button></a></td>
+      </tr>
+      <tr>
+        <td><a href=/view_event_list/><button">View events</button></a></td>
+      </tr>
+      <tr>
+        <td><a href=/create_person/><button">Create a new person</button></a></td>
+      </tr>
+      <tr>
+        <td><a href=/view_person_list/><button">View people</button></a></td>
+      </tr>
+           
+      <p class="message"><a href="/logout/">log out</a></p>
+
+    </table>
+
+  </div>
+</div>
+ <script type="text/javascript" src="{% static 'index/login.js' %}"></script>
+</body>

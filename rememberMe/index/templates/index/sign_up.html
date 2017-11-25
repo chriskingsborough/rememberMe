@@ -1,5 +1,29 @@
-<form method="post" action="">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Create new account" />
-</form>
+{% load static %}
+
+<head>
+    <link rel="stylesheet" href="{% static 'index/login.css' %}" type="text/css">
+</head>
+<body>
+<div class="login-page">
+
+  <div class="form">
+
+    <form class="register-form" action="" method="POST">
+        {% csrf_token %}
+
+      <input name="username" type="text" placeholder="username"/>
+      <input name="first_name" type="text" placeholder="first name"/>
+      <input name="last_name" type="text" placeholder="last name"/>
+      <input name="phone_number" type="tel" placeholder="phone number"/>
+      <input name="email" type="email" placeholder="email"/>
+      <input name="password" type="password" placeholder="password"/>
+
+      <button type="submit">Create</button>
+
+      <p class="message">Already registered? <a href="/sign_in/">Sign In</a></p>
+    </form>
+
+  </div>
+</div>
+ <script type="text/javascript" src="{% static 'index/login.js' %}"></script>
+</body>
