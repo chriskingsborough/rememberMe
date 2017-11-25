@@ -25,7 +25,7 @@ SECRET_KEY = '_$g2by)zlvx_14(lgi=l+f1f!kflfr8_62uku%iq(etrh^6l8o'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1', 'localhost', '45.55.47.192']
 
 
 # Application definition
@@ -34,7 +34,6 @@ INSTALLED_APPS = [
     'index',
     'event',
     'person',
-    'sslserver',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
