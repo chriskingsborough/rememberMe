@@ -1,34 +1,29 @@
-{% load static %}
+{% extends 'index/base.html' %}
 
-<head>
-    <link rel="stylesheet" href="{% static 'index/login.css' %}" type="text/css">
-</head>
+{% block content %}
 
-<body>
-<div class="login-page">
+  <div class="login-page">
 
-  <div class="form">
+    <div class="form">
 
-    <table class="register-form">
-        {% csrf_token %}
-      <tr>
-        <td><a href=/create_event/><button">Create a new event</button></a></td>
-      </tr>
-      <tr>
-        <td><a href=/view_event_list/><button">View events</button></a></td>
-      </tr>
-      <tr>
-        <td><a href=/create_person/><button">Create a new person</button></a></td>
-      </tr>
-      <tr>
-        <td><a href=/view_person_list/><button">View people</button></a></td>
-      </tr>
-           
-      <p class="message"><a href="/logout/">log out</a></p>
+      <table class="register-form">
+          {% csrf_token %}
+        <tr>
+          <td><a href=/create_event/><button">Create a new event</button></a></td>
+        </tr>
+        <tr>
+          <td><a href=/view_event_list/><button">View events</button></a></td>
+        </tr>
+        <tr>
+          <td><a href=/create_person/><button">Create a new person</button></a></td>
+        </tr>
+        <tr>
+          <td><a href=/view_person_list/><button">View people</button></a></td>
+        </tr>
 
-    </table>
+      </table>
 
+    </div>
   </div>
-</div>
- <script type="text/javascript" src="{% static 'index/login.js' %}"></script>
-</body>
+
+{% endblock %}
